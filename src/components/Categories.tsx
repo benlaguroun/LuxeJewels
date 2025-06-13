@@ -38,22 +38,22 @@ const Categories = () => {
   ];
 
   return (
-    <section className="py-16 bg-secondary/30">
+    <section className="py-16 bg-black/90">
       <div className="container px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold mb-4">
+          <h2 className="text-4xl font-serif font-bold mb-4 text-white">
             Shop by Category
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-gray-400">
             Explore our curated collections of fine jewelry
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <div
               key={category.name}
-              className="group relative overflow-hidden rounded-lg bg-card shadow-sm hover:shadow-lg transition-all duration-300"
+              className="group relative overflow-hidden rounded-xl bg-white/10 backdrop-blur-lg border border-white/10 transition-all hover:shadow-lg"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
@@ -62,18 +62,21 @@ const Categories = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 text-white">
                 <h3 className="text-xl font-serif font-semibold mb-2">
                   {category.name}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-2">
+                <p className="text-sm text-gray-300 mb-1">
                   {category.description}
                 </p>
-                <p className="text-xs text-primary font-medium mb-4">
+                <p className="text-xs text-yellow-400 font-medium mb-4">
                   {category.itemCount}
                 </p>
                 <Link to={category.link}>
-                  <Button variant="outline" size="sm" className="w-full">
+                  <Button
+                    size="sm"
+                    className="w-full bg-white/10 border border-white/20 text-white hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-400 hover:text-black shadow hover:shadow-yellow-500/50 transition"
+                  >
                     Shop {category.name}
                   </Button>
                 </Link>
