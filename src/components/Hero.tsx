@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroImageMobile from "../assets/hero.png";
-import heroImageDesktop from "../assets/hero1.png";
+import heroImageDesktop from "../assets/hero-section.png";
 
 const Hero = () => {
   return (
@@ -24,33 +25,39 @@ const Hero = () => {
         {/* Left: Text */}
         <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 md:p-16 bg-white/10 backdrop-blur-md border-r border-white/10 mt-20 md:mt-0">
           <div className="max-w-md text-center md:text-right text-white">
-            {/* Subheading - hidden on mobile */}
-            <h2 className="hidden md:block text-2xl font-light tracking-widest mt-2 text-gray-200">
-              Timeless Elegance
-            </h2>
+            {/* Big H1 Title with Yellow Effect */}
+            <h1 className="text-4xl md:text-6xl font-extrabold font-serif mb-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent drop-shadow-md">
+              Moroccan Handcrafted Jewelry
+            </h1>
 
-            {/* Paragraph - hidden on mobile */}
-            <p className="hidden md:block mt-6 text-base text-gray-300">
-              Discover handcrafted fine jewelry designed to celebrate you.
-              <br />
-              Classic beauty. Modern sophistication.
-            </p>
+            {/* Paragraph with Cultural Emphasis
+             <p className="mt-4 text-base md:text-lg text-gray-300 leading-relaxed">
+              Explore timeless pieces inspired by Moroccan heritage.{" "}
+              <br className="hidden md:block" />
+              Handcrafted with passion, made to adorn every moment.
+            </p> */}
 
             {/* Buttons */}
-            <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-end gap-4">
-              <Button
-                size="lg"
-                className="backdrop-blur bg-white/20 text-white border border-white/30 hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-400 hover:text-black shadow-md hover:shadow-yellow-500/60 transition duration-300"
-              >
-                Shop Collection
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="backdrop-blur bg-white/10 text-white border border-white/30 hover:bg-gradient-to-r hover:from-yellow-400 hover:via-yellow-500 hover:to-yellow-400 hover:text-black shadow-md hover:shadow-yellow-500/60 transition duration-300"
-              >
-                View Lookbook
-              </Button>
+            <div className="mt-10 flex flex-col sm:flex-row sm:justify-center md:justify-end gap-4 w-full max-w-xs mx-auto sm:max-w-none">
+              {/* Yellow Bordered Button */}
+              <Link to="/shop" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="w-full bg-transparent text-yellow-400 border border-yellow-400 hover:bg-yellow-400 hover:text-black transition duration-300"
+                >
+                  Shop Collection
+                </Button>
+              </Link>
+
+              {/* Filled Gradient Button */}
+              <Link to="/lookbook" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 text-black font-semibold shadow-md hover:shadow-yellow-500/60 transition duration-300"
+                >
+                  View Lookbook
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
