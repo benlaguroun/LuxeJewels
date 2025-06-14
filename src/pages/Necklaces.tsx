@@ -42,21 +42,23 @@ const Necklaces = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white/5 backdrop-blur-sm text-white">
       <Header />
-      <main className="py-16 bg-background">
+      <main className="py-20">
         <div className="container px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-serif font-bold mb-4">
+          {/* Heading */}
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-serif font-bold text-yellow-300 mb-4 drop-shadow">
               Necklaces Collection
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
               Elegant chains and pendants that complement your style. Each piece
               is designed to make a statement.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {/* Product Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
             {necklaceProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}

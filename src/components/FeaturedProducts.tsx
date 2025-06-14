@@ -60,13 +60,13 @@ const FeaturedProducts = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 bg-black/90">
       <div className="container px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold mb-4">
+          <h2 className="text-4xl font-serif font-bold mb-4 text-white">
             Featured Collection
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Handpicked pieces that embody elegance and sophistication. Each item
             is carefully selected for its exceptional quality and timeless
             appeal.

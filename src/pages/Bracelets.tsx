@@ -44,24 +44,28 @@ const Bracelets = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       <Header />
-      <main className="py-16 bg-background">
+      <main className="py-20">
         <div className="container px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-serif font-bold mb-4">
-              Bracelets Collection
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Elegant bracelets and bangles to adorn your wrists. From tennis
-              bracelets to charm collections.
-            </p>
-          </div>
+          {/* Glassmorphism Container */}
+          <div className="rounded-2xl bg-white/5 backdrop-blur-lg p-10 shadow-xl border border-white/10">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl md:text-5xl font-serif font-bold text-yellow-300 drop-shadow mb-4">
+                Bracelets Collection
+              </h1>
+              <p className="text-lg text-white/70 max-w-2xl mx-auto">
+                Elegant bracelets and bangles to adorn your wrists. From tennis
+                bracelets to charm collections.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {braceletProducts.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
+            {/* Product Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+              {braceletProducts.map((product) => (
+                <ProductCard key={product.id} {...product} />
+              ))}
+            </div>
           </div>
         </div>
       </main>
