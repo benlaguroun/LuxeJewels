@@ -35,25 +35,25 @@ const Collections = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       <Header />
-      <main className="py-16 bg-background">
+      <main className="py-20">
         <div className="container px-6">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-serif font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-yellow-300 drop-shadow mb-4">
               Our Collections
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Discover our carefully curated collections, each telling a unique
               story through exceptional craftsmanship and timeless design.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {collections.map((collection, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {collections.map((collection) => (
               <div
                 key={collection.name}
-                className="group relative overflow-hidden rounded-lg bg-card shadow-sm hover:shadow-lg transition-all duration-300"
+                className="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-md border border-white/10 transition-all duration-300 hover:shadow-xl"
               >
                 <div className="aspect-[3/2] overflow-hidden">
                   <img
@@ -62,17 +62,17 @@ const Collections = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-serif font-semibold mb-3">
+                <div className="p-6 md:p-8">
+                  <h3 className="text-2xl font-serif font-semibold mb-2 text-white">
                     {collection.name}
                   </h3>
-                  <p className="text-muted-foreground mb-3">
-                    {collection.description}
-                  </p>
-                  <p className="text-sm text-primary font-medium mb-6">
+                  <p className="text-white/70 mb-2">{collection.description}</p>
+                  <p className="text-sm text-yellow-300 font-medium mb-5">
                     {collection.itemCount}
                   </p>
-                  <Button className="w-full">Explore Collection</Button>
+                  <Button className="w-full bg-white/10 text-white hover:bg-yellow-400 hover:text-black transition">
+                    Explore Collection
+                  </Button>
                 </div>
               </div>
             ))}

@@ -29,70 +29,76 @@ const Cart = () => {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  const shipping = 0; // Free shipping
-  const tax = subtotal * 0.08; // 8% tax
+  const shipping = 0;
+  const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       <Header />
-      <main className="py-16 bg-background">
+      <main className="py-20">
         <div className="container px-6">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl font-serif font-bold mb-8">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-yellow-300 drop-shadow mb-12 text-center">
               Shopping Cart
             </h1>
 
             {cartItems.length > 0 ? (
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <div className="space-y-4">
-                    {cartItems.map((item) => (
-                      <div
-                        key={item.id}
-                        className="flex items-center gap-4 p-4 border rounded-lg"
-                      >
-                        <img
-                          src={item.imageUrl}
-                          alt={item.name}
-                          className="w-20 h-20 object-cover rounded"
-                        />
-                        <div className="flex-1">
-                          <h3 className="font-semibold">{item.name}</h3>
-                          {item.size && (
-                            <p className="text-sm text-muted-foreground">
-                              {item.size}
-                            </p>
-                          )}
-                          <p className="font-semibold text-lg">
-                            ${item.price.toFixed(2)}
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Button variant="outline" size="sm">
-                            <Minus className="h-4 w-4" />
-                          </Button>
-                          <span className="w-8 text-center">
-                            {item.quantity}
-                          </span>
-                          <Button variant="outline" size="sm">
-                            <Plus className="h-4 w-4" />
-                          </Button>
-                        </div>
-                        <Button variant="ghost" size="sm">
-                          <X className="h-4 w-4" />
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                {/* Cart Items */}
+                <div className="lg:col-span-2 space-y-6">
+                  {cartItems.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-md"
+                    >
+                      <img
+                        src={item.imageUrl}
+                        alt={item.name}
+                        className="w-20 h-20 object-cover rounded-lg"
+                      />
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-lg">{item.name}</h3>
+                        {item.size && (
+                          <p className="text-sm text-white/60">{item.size}</p>
+                        )}
+                        <p className="font-bold text-yellow-400">
+                          ${item.price.toFixed(2)}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Button
+                          className="bg-white/10 hover:bg-yellow-400 hover:text-black text-white"
+                          size="sm"
+                        >
+                          <Minus className="h-4 w-4" />
+                        </Button>
+                        <span className="w-8 text-center">{item.quantity}</span>
+                        <Button
+                          className="bg-white/10 hover:bg-yellow-400 hover:text-black text-white"
+                          size="sm"
+                        >
+                          <Plus className="h-4 w-4" />
                         </Button>
                       </div>
-                    ))}
-                  </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-white hover:text-yellow-400"
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="lg:col-span-1">
-                  <div className="border rounded-lg p-6">
-                    <h2 className="text-xl font-serif font-semibold mb-4">
+                {/* Order Summary */}
+                <div>
+                  <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 shadow-md">
+                    <h2 className="text-xl font-serif font-semibold mb-4 text-yellow-300">
                       Order Summary
                     </h2>
-                    <div className="space-y-2 mb-4">
+                    <div className="space-y-3 mb-4 text-white/90">
                       <div className="flex justify-between">
                         <span>Subtotal</span>
                         <span>${subtotal.toFixed(2)}</span>
@@ -105,28 +111,35 @@ const Cart = () => {
                         <span>Tax</span>
                         <span>${tax.toFixed(2)}</span>
                       </div>
-                      <hr />
-                      <div className="flex justify-between font-semibold text-lg">
+                      <hr className="border-white/20" />
+                      <div className="flex justify-between font-semibold text-lg text-yellow-300">
                         <span>Total</span>
                         <span>${total.toFixed(2)}</span>
                       </div>
                     </div>
-                    <Button className="w-full mb-4">Proceed to Checkout</Button>
-                    <Button variant="outline" className="w-full">
+                    <Button className="w-full bg-white/10 hover:bg-yellow-400 hover:text-black text-white font-semibold mb-3">
+                      Proceed to Checkout
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full text-white hover:bg-yellow-400 hover:text-black border-white/30"
+                    >
                       Continue Shopping
                     </Button>
                   </div>
                 </div>
               </div>
             ) : (
-              <div className="text-center py-16">
-                <h2 className="text-2xl font-serif font-semibold mb-4">
+              <div className="text-center py-20 bg-white/5 backdrop-blur-md rounded-xl">
+                <h2 className="text-2xl font-serif font-semibold mb-4 text-yellow-300">
                   Your cart is empty
                 </h2>
-                <p className="text-muted-foreground mb-8">
-                  Start shopping to add items to your cart
+                <p className="text-white/60 mb-6">
+                  Start shopping to add items to your cart.
                 </p>
-                <Button>Continue Shopping</Button>
+                <Button className="bg-white/10 hover:bg-yellow-400 hover:text-black text-white">
+                  Continue Shopping
+                </Button>
               </div>
             )}
           </div>
