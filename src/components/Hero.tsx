@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 md:p-16 bg-white/10 backdrop-blur-md border-r border-white/10 mt-20 md:mt-0">
           <div className="max-w-md text-center md:text-right text-white">
             {/* Big H1 Title with Yellow Effect */}
-            <h1 className="text-4xl md:text-6xl font-extrabold font-serif mb-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent drop-shadow-md">
+            <h1 className="hidden md:block text-4xl md:text-6xl font-extrabold font-serif mb-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent drop-shadow-md">
               Moroccan Handcrafted Jewelry
             </h1>
 
@@ -40,7 +40,7 @@ const Hero = () => {
             {/* Buttons */}
             <div className="mt-10 flex flex-col sm:flex-row sm:justify-center md:justify-end gap-4 w-full max-w-xs mx-auto sm:max-w-none">
               {/* Yellow Bordered Button */}
-              <Link to="/shop" className="w-full sm:w-auto">
+              <Link to="/collections" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="w-full bg-transparent text-yellow-400 border border-yellow-400 hover:bg-yellow-400 hover:text-black transition duration-300"
