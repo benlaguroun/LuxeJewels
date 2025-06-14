@@ -43,15 +43,15 @@ const Earrings = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       <Header />
-      <main className="py-16 bg-background">
+      <main className="py-20">
         <div className="container px-6">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-serif font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-yellow-300 drop-shadow mb-4">
               Earrings Collection
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
               From delicate studs to statement hoops, find the perfect earrings
               to frame your face beautifully.
             </p>
