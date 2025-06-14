@@ -38,7 +38,7 @@ const Collections = () => {
     <div className="min-h-screen bg-black text-white">
       <Header />
       <main className="py-20">
-        <div className="container px-6">
+        <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-yellow-300 drop-shadow mb-4">
               Our Collections
@@ -49,11 +49,11 @@ const Collections = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {collections.map((collection) => (
               <div
                 key={collection.name}
-                className="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-md border border-white/10 transition-all duration-300 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-xl bg-white/5 backdrop-blur-md border border-white/10 transition-all duration-300 hover:shadow-xl max-w-[400px] w-full mx-auto"
               >
                 <div className="aspect-[3/2] overflow-hidden">
                   <img
@@ -62,11 +62,13 @@ const Collections = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                <div className="p-6 md:p-8">
-                  <h3 className="text-2xl font-serif font-semibold mb-2 text-white">
+                <div className="p-5 md:p-6">
+                  <h3 className="text-xl font-serif font-semibold mb-2 text-white">
                     {collection.name}
                   </h3>
-                  <p className="text-white/70 mb-2">{collection.description}</p>
+                  <p className="text-white/70 mb-2 text-sm md:text-base">
+                    {collection.description}
+                  </p>
                   <p className="text-sm text-yellow-300 font-medium mb-5">
                     {collection.itemCount}
                   </p>
