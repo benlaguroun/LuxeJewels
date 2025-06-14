@@ -42,13 +42,13 @@ const Necklaces = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white/5 backdrop-blur-sm text-white">
+    <div className="min-h-screen bg-black text-white">
       <Header />
       <main className="py-20">
         <div className="container px-6">
           {/* Heading */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-serif font-bold text-yellow-300 mb-4 drop-shadow">
+            <h1 className="text-5xl font-serif font-bold text-yellow-300 drop-shadow mb-4">
               Necklaces Collection
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
